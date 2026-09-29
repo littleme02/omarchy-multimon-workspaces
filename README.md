@@ -5,11 +5,11 @@ A workspace widget for the [Omarchy](https://omarchy.org/) bar, built for multi-
 The stock widget only marks the focused workspace. With several screens, the workspaces on the other screens look the same as empty ones.
 This widget gives **every workspace that's on a screen** a pip. Each monitor's bar shows which workspace belongs to it, and which one has focus.
 
-**Focused monitor** (laptop, on workspace 5):
+**Focused monitor**:
 
 ![Bar on the focused monitor](screenshots/active-monitor.png)
 
-**Another monitor** (upper-left screen, on workspace 3, while the laptop has focus):
+**Another monitor**:
 
 ![Bar on an unfocused monitor](screenshots/inactive-monitor.png)
 
