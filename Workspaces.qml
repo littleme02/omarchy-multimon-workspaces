@@ -21,6 +21,17 @@ BarWidget {
 
   property var themeColors: ({})
 
+  // Quickshell 0.3.1 leaves each monitor's activeWorkspace stale after a
+  // workspace moves between monitors (Hyprland sends focusedmon before
+  // moveworkspacev2), so refresh the monitor model once the move lands.
+  // Same fix as omacom/omarchy#10190 for omarchy/omarchy#10187.
+  Connections {
+    target: Hyprland
+    function onRawEvent(event) {
+      if (event.name === "moveworkspacev2") Hyprland.refreshMonitors()
+    }
+  }
+
   readonly property color focusedColor: setting("focusedColor", themeColors.blue || "#7aa2f7")
   readonly property color focusedElsewhereColor: setting("focusedElsewhereColor", themeColors.green || "#9ece6a")
   readonly property color localColor: setting("localColor", themeColors.yellow || "#e0af68")
