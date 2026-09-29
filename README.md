@@ -15,6 +15,14 @@ This widget gives **every workspace that's on a screen** a pip. Each monitor's b
 
 Workspace 2 is on a third screen playing a fullscreen video, so it has a ring on both bars.
 
+## Every state, both palettes
+
+A staged bar showing every pip state at once. On a real setup, blue and green never appear on the same bar.
+
+![All pip states in the theme palette and in colour-blind mode](screenshots/all-states.png)
+
+From left to right: focused here · focused on another monitor · this monitor's workspace · on another monitor · fullscreen (ring) · has windows · empty.
+
 ## What the pips mean
 
 | Pip | Meaning |
