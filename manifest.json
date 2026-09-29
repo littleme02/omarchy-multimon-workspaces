@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "littleme.multimon-workspaces",
+  "name": "Multi-monitor Workspaces",
+  "version": "1.0.0",
+  "author": "littleme02",
+  "description": "Workspace indicators that show every visible workspace across monitors, which one is focused, which one is on this screen, and which have a fullscreen window",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "Workspaces.qml"
+  },
+  "barWidget": {
+    "displayName": "Multi-monitor Workspaces",
+    "description": "Workspace pips for multi-monitor setups",
+    "category": "Compositor",
+    "defaultSection": "left",
+    "allowMultiple": false
+  }
+}
