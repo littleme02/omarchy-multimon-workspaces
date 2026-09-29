@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "littleme.multimon-workspaces",
   "name": "Multi-monitor Workspaces",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "author": "littleme02",
   "description": "Workspace indicators that show every visible workspace across monitors, which one is focused, which one is on this screen, and which have a fullscreen window",
   "kinds": [

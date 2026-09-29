@@ -51,6 +51,26 @@ To override them, add settings to the widget's entry in `~/.config/omarchy/shell
 }
 ```
 
+## Colour-blind mode
+
+Green and yellow are hard to tell apart with red-green colour blindness, the most common kind. Set `colorblind` to switch to the [Okabe-Ito](https://jfly.uni-koeln.de/color/) colour-blind-safe palette:
+
+```json
+{
+  "id": "littleme.multimon-workspaces",
+  "colorblind": true
+}
+```
+
+| Pip | Default (theme) | Colour-blind mode |
+|---|---|---|
+| Focused, this monitor | blue | blue `#0072B2` |
+| Focused, another monitor | green | sky blue `#56B4E9` |
+| This monitor's workspace | yellow | orange `#E69F00` |
+| On another monitor | white | white |
+
+Explicit `focusedColor` / `focusedElsewhereColor` / `localColor` settings still take priority.
+
 ## How it works
 
 - **No scripts or services.** It's a single QML file that reads Quickshell's live Hyprland state: monitors, their active workspaces, focus and fullscreen.

@@ -14,7 +14,8 @@ import qs.Ui
 //   white  - a workspace another (unfocused) monitor shows
 // A ring around a pip/number means that workspace has a fullscreen window.
 // Colors come from the current theme's colors.toml and can be overridden in
-// shell.json with focusedColor / focusedElsewhereColor / localColor.
+// shell.json with focusedColor / focusedElsewhereColor / localColor, or set
+// "colorblind": true for a colour-blind-safe palette.
 BarWidget {
   id: root
   moduleName: "littleme.multimon-workspaces"
@@ -32,9 +33,12 @@ BarWidget {
     }
   }
 
-  readonly property color focusedColor: setting("focusedColor", themeColors.blue || "#7aa2f7")
-  readonly property color focusedElsewhereColor: setting("focusedElsewhereColor", themeColors.green || "#9ece6a")
-  readonly property color localColor: setting("localColor", themeColors.yellow || "#e0af68")
+  // "colorblind": true swaps the theme's green/yellow (hard to tell apart
+  // with red-green colour blindness) for the Okabe-Ito colour-safe palette.
+  readonly property bool colorblind: setting("colorblind", false) === true
+  readonly property color focusedColor: setting("focusedColor", colorblind ? "#0072B2" : (themeColors.blue || "#7aa2f7"))
+  readonly property color focusedElsewhereColor: setting("focusedElsewhereColor", colorblind ? "#56B4E9" : (themeColors.green || "#9ece6a"))
+  readonly property color localColor: setting("localColor", colorblind ? "#E69F00" : (themeColors.yellow || "#e0af68"))
 
   // Output name (e.g. "DP-3") of the screen this bar instance is drawn on.
   // Compared by name, not object: a monitor that reconnects (USB-C dock)
